@@ -15,6 +15,9 @@
         <testsuite name="blog">
             <directory>./modules/Blog/Tests/</directory>
         </testsuite>
+        <testsuite name="quotes">
+            <directory>./modules/Quotes/Tests/</directory>
+        </testsuite>
     </testsuites>
     <filter>
         <whitelist>
