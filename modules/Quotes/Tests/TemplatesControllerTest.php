@@ -12,7 +12,7 @@ class TemplatesControllerTest extends TestCase
 {
     protected $mock;
     
-    /*public function __call($method, $args)
+    public function __call($method, $args)
     {
         if (in_array($method, ['get', 'post', 'put', 'patch', 'delete']))
         {
@@ -20,7 +20,7 @@ class TemplatesControllerTest extends TestCase
         }
 
         throw new BadMethodCallException;
-    }*/
+    }
 
     public function setUp()
     {
@@ -49,16 +49,16 @@ class TemplatesControllerTest extends TestCase
                         ['id'=>1]);
     }
     
-//    public function testGet()
-//    {
-//        $this->get('/api/v1/quotes/templates/get');
-//        //$this->assertResponseOk();
-//     
-//        //$this->mock->shouldReceive('get')->once(); 
-//        //$this->get('/api/v1/quotes/templates/get');
-//        //$this->assertViewHas('posts');
-//        $this->assertResponseOk();
-//        
-//        
-//    }
+    public function testGet()
+    {
+        $this->get('/api/v1/quotes/templates/get');
+        //$this->assertResponseOk();
+     
+        //$this->mock->shouldReceive('get')->once(); 
+        //$this->get('/api/v1/quotes/templates/get');
+        //$this->assertViewHas('posts');
+        $this->assertResponseOk();
+        
+        
+    }
 }

@@ -3,7 +3,7 @@
 interface TemplatesInterface{
     public function getAllTemplates();
     public function getSingleTemplate($templateID);
-    //public function addTemplate();
+    public function createTemplate();
     //public function updateTemplate();
 }
 

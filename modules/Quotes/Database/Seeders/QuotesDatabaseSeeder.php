@@ -17,7 +17,8 @@ class QuotesDatabaseSeeder extends Seeder {
 
         $this->call("Modules\Quotes\Database\Seeders\quotetemplateseeder");
         $this->call("Modules\Quotes\Database\Seeders\QuoteTemplateSettingTableSeeder");
-        
+        $this->call("Modules\Quotes\Database\Seeders\QuoteTemplateProfilesTableSeeder");
+        //$this->call("Modules\Quotes\Database\Seeders\QuoteTemplateAccessoriesTableSeeder");
     }
 
 }
