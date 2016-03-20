@@ -1,7 +1,7 @@
 <?php namespace Modules\Quotes\Repositories;
 use \Modules\Quotes\Repositories\TemplatesInterface;
 use Modules\Quotes\Entities\Template;
-use Modules\Quotes\Entities\TemplateSettings;
+//use Modules\Quotes\Entities\TemplateSettings;
 class TemplatesRepo implements TemplatesInterface{
     public function getAllTemplates() {
         return Template::all();
@@ -9,12 +9,15 @@ class TemplatesRepo implements TemplatesInterface{
 
     public function getSingleTemplate($templateID) {
         //return Template::with('settings','profiles.sections')->find($templateID);
-        $data= Template::with('settings','profiles')
+        $data= Template::with('settings')
                 ->with([
                     'profiles.sections' => function($q){
-                        //$q->select('number','weight','notes');
-                    //$q->where('weight','>',1);
                     $q->select('id','number','weight','notes');
+                }])
+                ->with([
+                    'accessories.price' => function($q){
+                    $q->where('deleted','<>','NULL');
+                    $q->select('id','revised_price');
                 }])
                 ->find($templateID);
         //return \DB::getQueryLog();
@@ -30,6 +33,10 @@ class TemplatesRepo implements TemplatesInterface{
     }
 
     public function createTemplate() {
+        
+    }
+
+    public function updateTemplate() {
         
     }
 

@@ -16,4 +16,8 @@ class Template extends Model {
     {
         return $this->hasMany('Modules\Quotes\Entities\TemplateProfiles','quote_template_id_fk');
     }
+    public function accessories()
+    {
+        return $this->hasMany('Modules\Quotes\Entities\TemplateAccessories','quote_template_id_fk');
+    }
 }

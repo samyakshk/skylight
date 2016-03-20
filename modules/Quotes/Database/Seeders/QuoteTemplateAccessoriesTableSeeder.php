@@ -15,22 +15,16 @@ class QuoteTemplateAccessoriesTableSeeder extends Seeder {
 		\DB::table('quote_template_accessories')->insert([
             [
                 'quote_template_id_fk' => '1',
-                'accessory_id' => '1',
+                'accessory_id_fk' => '1',
                 'formula' => '2H',
                 'is_roller'=>0
             ],
             [
                 'quote_template_id_fk' => '1',
-                'accessory_id' => '2',
+                'accessory_id_fk' => '2',
                 'formula' => '2H',
-                'is_roller'=>0
-            ],
-            [
-                'quote_template_id_fk' => '1',
-                'accessory_id' => '3',
-                'formula' => '2H',
-                'is_roller'=>0
-            ],
+                'is_roller'=>1
+            ],            
         ]);
 	}
 
