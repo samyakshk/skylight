@@ -1,17 +1,14 @@
 <?php namespace Modules\Quotes\Repositories;
 use \Modules\Quotes\Repositories\TemplatesInterface;
 use Modules\Quotes\Entities\Template;
+use Modules\Quotes\Entities\TemplateSettings;
 class TemplatesRepo implements TemplatesInterface{
-    protected $templateModel;
-    public function __construct(Template $templateModel) {
-        $this->templateModel=$templateModel;
-    }
     public function getAllTemplates() {
-        return $this->templateModel->all();
+        return Template::all();
     }
 
     public function getSingleTemplate($templateID) {
-        return $this->templateModel->find($templateID);
+        return Template::with('settings')->find($templateID);
     }
 
 }

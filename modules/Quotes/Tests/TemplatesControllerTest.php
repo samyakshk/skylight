@@ -10,9 +10,9 @@ use Modules\Quotes\Repository\TemplatesRepository;
 
 class TemplatesControllerTest extends TestCase
 {
-    protected $blogMock;
+    protected $mock;
     
-    public function __call($method, $args)
+    /*public function __call($method, $args)
     {
         if (in_array($method, ['get', 'post', 'put', 'patch', 'delete']))
         {
@@ -20,11 +20,12 @@ class TemplatesControllerTest extends TestCase
         }
 
         throw new BadMethodCallException;
-    }
+    }*/
 
     public function setUp()
     {
       parent::setUp();
+      //$this->mock('Modules\Quotes\Repositories\TemplatesInterface');
     }
 
     public function mock($class)
@@ -36,8 +37,28 @@ class TemplatesControllerTest extends TestCase
     
     public function testAction_Get()
     {
-        $this->get('/api/v1/quotes/templates/get');
-        $this->assertResponseOk();
+        $this->get('/api/v1/quotes/templates/get')
+             ->seeJsonStructure([
+                 '*'=>([ 'id',
+                 'code',
+                 'description','image','type','created_at','updated_at'])
+             ]);
         
+        $this->get('/api/v1/quotes/templates/get')
+             ->seeJson(
+                        ['id'=>1]);
     }
+    
+//    public function testGet()
+//    {
+//        $this->get('/api/v1/quotes/templates/get');
+//        //$this->assertResponseOk();
+//     
+//        //$this->mock->shouldReceive('get')->once(); 
+//        //$this->get('/api/v1/quotes/templates/get');
+//        //$this->assertViewHas('posts');
+//        $this->assertResponseOk();
+//        
+//        
+//    }
 }

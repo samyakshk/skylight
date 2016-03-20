@@ -30,10 +30,15 @@ class QuotesServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{	            
-            $this->app->bind('Modules\Quotes\Repositories\TemplatesInterface', function($app)
-            {
-                return new \Modules\Quotes\Repositories\TemplatesRepo( new \Modules\Quotes\Entities\Template);
-            });
+//            $this->app->bind('Modules\Quotes\Repositories\TemplatesInterface', function($app)
+//            {
+//                return new \Modules\Quotes\Repositories\TemplatesRepo( new \Modules\Quotes\Entities\Template);
+//            });
+            
+            $this->app->bind(
+                    'Modules\Quotes\Repositories\TemplatesInterface',
+                    'Modules\Quotes\Repositories\TemplatesRepo'
+            );
 	}
 
 	/**

@@ -17,5 +17,10 @@ class TemplatesController extends Controller {
     public function getById($id) {    
         $template=$this->templatesRepo->getSingleTemplate($id);
         return response()->json($template);
-    }	
+    }
+    
+    public function add(Request $request) {    
+        $template=$this->templatesRepo->getSingleTemplate($id);
+        return response()->json($template);
+    }
 }
