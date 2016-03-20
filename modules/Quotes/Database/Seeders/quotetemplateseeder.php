@@ -12,6 +12,7 @@ class quotetemplateseeder extends Seeder {
      * @return void
      */
     public function run() {
+       \DB::table('quote_templates')->truncate();
         \DB::table('quote_templates')->insert([
             [
                 'code' => 'W1',
@@ -20,6 +21,10 @@ class quotetemplateseeder extends Seeder {
                 'type' => 'single',
                 'created_at' => \Carbon\Carbon::createFromDate(2016, 3, 17)->toDateTimeString(),
                 'updated_at' => \Carbon\Carbon::createFromDate(2014, 3, 17)->toDateTimeString(),
+                 'created_by'=>'Ram',
+                 'updated_by'=>'Ram',
+                 'deleted_by'=> 'NULL',  
+                 'deleted_at'=>'NULL',
             ],
             [
                 'code' => 'W3',
@@ -28,6 +33,10 @@ class quotetemplateseeder extends Seeder {
                 'type' => 'single',
                 'created_at' => \Carbon\Carbon::createFromDate(2016, 3, 17)->toDateTimeString(),
                 'updated_at' => \Carbon\Carbon::createFromDate(2014, 3, 17)->toDateTimeString(),
+                 'created_by'=>'Ram',
+                 'updated_by'=>'Ram',
+                 'deleted_by'=> 'NULL',  
+                 'deleted_at'=>'NULL',
             ],
             [
                 'code' => 'W4',
@@ -36,6 +45,10 @@ class quotetemplateseeder extends Seeder {
                 'type' => 'matrix',
                 'created_at' => \Carbon\Carbon::createFromDate(2016, 3, 17)->toDateTimeString(),
                 'updated_at' => \Carbon\Carbon::createFromDate(2014, 3, 17)->toDateTimeString(),
+                 'created_by'=>'Ram',
+                 'updated_by'=>'Ram',
+                 'deleted_by'=> 'NULL',  
+                 'deleted_at'=>'NULL',
             ]
         ]);
     }

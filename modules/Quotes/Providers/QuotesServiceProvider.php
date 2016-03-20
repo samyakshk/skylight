@@ -39,6 +39,15 @@ class QuotesServiceProvider extends ServiceProvider {
                     'Modules\Quotes\Repositories\TemplatesInterface',
                     'Modules\Quotes\Repositories\TemplatesRepo'
             );
+            $this->app->bind(
+                    'Modules\Quotes\Repositories\GlobalSettingInterface',
+                    'Modules\Quotes\Repositories\GlobalSettingRepo'
+            );
+
+             $this->app->bind(
+                    'Modules\Quotes\Repositories\QuoteStatusInterface',
+                    'Modules\Quotes\Repositories\QuoteStatusRepo'
+            );
 	}
 
 	/**
