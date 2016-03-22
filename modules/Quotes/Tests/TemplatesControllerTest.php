@@ -46,7 +46,7 @@ class TemplatesControllerTest extends TestCase
         
         $this->get('/api/v1/quotes/templates/get')
              ->seeJson(
-                        ['id'=>1]);
+                        ['id'=>1,'code'=>'abc']);
     }
     
     public function testGet()

@@ -9,4 +9,8 @@ class TemplateAccessories extends Model {
     {
         return $this->belongsTo('Modules\Quotes\Entities\ProductPriceRevision','accessory_id_fk');
     }
+    public function details()
+    {
+        return $this->belongsTo('Modules\Quotes\Entities\InventoryAccessories','accessory_id_fk');
+    }
 }

@@ -2,7 +2,7 @@
 
 class TemplateModel
 {
-    public $id;
+    /*public $id;
     public $template_code;
     public $description;
     public $image;
@@ -13,6 +13,9 @@ class TemplateModel
     public $updated_at;
     public $deleted_by;
     public $deleted_at;
-    public $settings;
+    public $settings;*/
+    public function set($data) {
+        foreach ($data AS $key => $value) $this->{$key} = $value;
+    }
 }
 
