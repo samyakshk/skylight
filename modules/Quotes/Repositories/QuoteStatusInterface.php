@@ -1,6 +1,6 @@
 <?php namespace Modules\Quotes\Repositories;
 
-interface StatusInterface{
+interface QuoteStatusInterface{
     public function getAllStatuses();
     public function getSingleStatus($statusID);
     

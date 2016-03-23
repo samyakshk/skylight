@@ -7,7 +7,7 @@ Route::group(['middleware' => 'web', 'prefix' => 'api/v1/quotes', 'namespace' =>
     Route::post('templates/getAllByIds', 'TemplatesController@getAllByIds');
     Route::post('templates/add', 'TemplatesController@add');
     Route::get('QuoteStatuses/get', 'QuoteStatusController@get');
-    Route::get('QuoteStatuses/getById/{id}', 'QuoteStatusesController@getById');
-    Route::get('GlobalSettings/get', 'GlobalSettingsController@get');
-    Route::get('GlobalSettings/getById/{id}', 'GlobalSettingsController@getById');
+    Route::get('QuoteStatuses/getById/{id}', 'QuoteStatusController@getById');
+    Route::get('GlobalSettings/get', 'QuoteGlobalSettingsController@get');
+    Route::get('GlobalSettings/getById/{id}', 'QuoteGlobalSettingsController@getById');
 });

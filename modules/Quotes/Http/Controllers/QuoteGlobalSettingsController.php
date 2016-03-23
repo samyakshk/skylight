@@ -3,7 +3,7 @@
 use Pingpong\Modules\Routing\Controller;
 use App\Http\Requests\Request;
 use Modules\Quotes\Repositories\GlobalSettingInterface;
-class QuoteGlobalSettings extends Controller {
+class QuoteGlobalSettingsController extends Controller {
 	
 	 protected $globalsettingRepo;
     public function __construct(GlobalSettingInterface $globalsettingInterface) {
@@ -24,4 +24,5 @@ class QuoteGlobalSettings extends Controller {
         $settings=$this->globalsettingRepo->getSingleSetting($id);
         return response()->json($settings);
 	
+}
 }

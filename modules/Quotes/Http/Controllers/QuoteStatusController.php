@@ -4,7 +4,7 @@ namespace Modules\Quotes\Http\Controllers;
 
 use Pingpong\Modules\Routing\Controller;
 use App\Http\Requests\Request;
-use Modules\Quotes\Repositories\GlobalSettingInterface;
+use Modules\Quotes\Repositories\QuoteStatusInterface;
 
 class QuoteStatusController extends Controller {
 
